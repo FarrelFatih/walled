@@ -1,17 +1,19 @@
-function NavItems({ menu, activeTab, handleClick }) {
+import React from "react";
+import { NavLink } from "react-router";
+
+function NavItems({ menu }) {
   return (
     <div className="flex gap-x-8">
       {menu.map((item, index) => (
-        <a
-          onClick={() => handleClick(item.name)}
-          className={
-            activeTab === item.name ? "text[#19918F] fontBold" : "text-black"
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text[#19918F] fontBold" : "text-black"
           }
           key={index}
-          href={item.link}
+          to={item.href}
         >
           {item.name}
-        </a>
+        </NavLink>
       ))}
     </div>
   );
