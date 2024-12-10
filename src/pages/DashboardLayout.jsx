@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/logo.png";
 import { Outlet } from "react-router";
 import { useState } from "react";
 import NavItems from "../components/NavItems";
 
 function DashboardLayout() {
+  // const credential = localStorage.getItem("login");
+
+  // const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (!credential) {
+  //     return navigate("/");
+  //   }
+  // }, []);
+
   const menu = [
     {
       name: "Dashboard",
@@ -20,7 +30,7 @@ function DashboardLayout() {
     },
     {
       name: "Sign Out",
-      href: "/login",
+      href: "/signout",
     },
   ];
   return (
